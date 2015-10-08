@@ -1,0 +1,30 @@
+// Yanni Angelides
+// 10/8/15
+
+public class ObjectHasher extends Hasher
+{
+	public int hash(Object obj)
+	{ 
+		String sObj = obj.toString();
+		int i = 0;
+		int total = 0;
+		while (i < sObj.length())
+		{
+			char a = sObj.charAt(i); // Tallying the total of all the ascii values if the character in the Objects memory address
+			total += (int)a;
+			i++;		
+		}
+		return total;
+	}
+	
+	public String getCoderName()
+	{
+		return "Yanni Angelides";
+	}
+	
+	public static void main(String [] args)
+	{
+		ObjectHasher a = new ObjectHasher();
+		System.out.println(a.hash(5));
+	}
+}
